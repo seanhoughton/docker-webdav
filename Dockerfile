@@ -19,7 +19,7 @@ RUN apk add --no-cache \
 
 RUN mkdir nginx nginx-vts-module
 
-ENV NGINX_VERSION 1.15.4
+ENV NGINX_VERSION 1.16.0
 ENV VTS_MODULE_VERSION v0.1.18
 ENV WEBDAV_EXT_SHA 430fd774fe838a04f1a5defbf1dd571d42300cf9
 
