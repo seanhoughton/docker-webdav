@@ -18,6 +18,11 @@ server {
         vhost_traffic_status_display_format html;
     }
 
+    location /health {
+        access_log off;
+        return 200 "healthy\n";
+    }
+
     location / {
         root                        /data;
         client_body_temp_path       /tmp/uploads;
