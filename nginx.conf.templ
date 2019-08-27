@@ -8,6 +8,7 @@ pid        /var/run/nginx.pid;
 
 events {
     worker_connections  ${WORKER_CONNECTIONS};
+    accept_mutex off;
 }
 
 http {
@@ -27,8 +28,9 @@ http {
     access_log  /var/log/nginx/access.log  upstream_time;
     ${ACCESS_LOG_STATEMENT}
 
-    sendfile   ${SENDFILE};
-    tcp_nopush ${TCP_NOPUSH};
+    sendfile           ${SENDFILE};
+    sendfile_max_chunk 512k;
+    tcp_nopush         ${TCP_NOPUSH};
 
     keepalive_timeout  65;
 

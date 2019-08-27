@@ -31,6 +31,7 @@ server {
         create_full_put_path        on;
         dav_access                  user:rw group:r all:r;
         autoindex                   on;
+        aio                         threads;
 
         limit_except GET PROPFIND OPTIONS{
             auth_basic_user_file    /etc/nginx/.htpasswd;
